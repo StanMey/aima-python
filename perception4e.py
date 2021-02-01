@@ -337,7 +337,8 @@ def simple_convnet(size=3, num_classes=10):
     model.add(Activation('softmax'))
 
     # compile model
-    model.compile(loss='categorical_crossentropy',
+    model.compile(optimizer='adam',
+                  loss='categorical_crossentropy',
                   metrics=['accuracy'])
     print(model.summary())
     return model
